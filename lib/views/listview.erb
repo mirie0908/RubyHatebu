@@ -1,0 +1,29 @@
+<%#
+# To change this license header, choose License Headers in Project Properties.
+# To change this template file, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+
+<script type="text/javascript">
+//ここからJQueryによる自作コードを書く 2014/08/18(mon)
+$(function() {
+  
+  $('td').click(function() { 
+    var n = $(this).index('td');
+    alert(n + "番目をクリック");
+  });
+  
+});
+</script>
+
+<p><div class="sample_01">はてなダイアリー投稿一覧</div></p>
+<table class="sample_01">
+
+<div class="amimation">
+<% data.each do |e| %> <tr><td><%= e.text.split("T")[0]  %> </td></tr> <% end %>
+</div>
+  
+</table>
+<p>
+<div class="sample_01"><a href="/">戻る</a></div>

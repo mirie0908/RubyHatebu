@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title><%= @title %></title>
+
+<%#
+# To change this license header, choose License Headers in Project Properties.
+# To change this template file, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+<link   href="styles.css" type="text/css" rel="stylesheet" />
+
+<!-- animsition CSS -->
+<link rel="stylesheet" href="./css/animsition.min.css">
+
+<link type="text/css" rel="stylesheet"
+  href="http://code.jquery.com/ui/1.10.3/themes/cupertino/jquery-ui.min.css" />
+<script type="text/javascript"
+  src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript"
+  src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+
+<!--1国際化対応のライブラリをインポート-->
+<script type="text/javascript" 
+  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/i18n/jquery-ui-i18n.min.js"></script>
+
+<!-- animsition js -->
+<script src="./dist/js/jquery.animsition.min.js"></script> 
+ 
+<!-- デバイスに合わせた表示設定 -->  
+<meta name="viewport" content="width=device-width">
+  
+</head>
+<body>
+    <%= yield %>
+</body>
+</html>

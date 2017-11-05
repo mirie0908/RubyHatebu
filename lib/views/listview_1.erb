@@ -1,0 +1,63 @@
+<%#
+# To change this license header, choose License Headers in Project Properties.
+# To change this template file, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+
+<script type="text/javascript">
+//ここからJQueryによる自作コードを書く 2014/08/18(mon)
+
+$(function() {
+
+  $(".animsition").animsition({
+    inClass               :   'fade-in',
+    outClass              :   'fade-out',
+    inDuration            :    1500,
+    outDuration           :    800,
+    linkElement           :   '.animsition-link', 
+    // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+    touchSupport          :    true, 
+    loading               :    true,
+    loadingParentElement  :   'body', //animsition wrapper element
+    loadingClass          :   'animsition-loading',
+    unSupportCss          : [ 'animation-duration',
+                              '-webkit-animation-duration',
+                              '-o-animation-duration'
+                            ]
+  });
+  
+});
+
+</script>
+
+<p><div class="sample_01">はてなダイアリー投稿一覧</div></p
+<p>
+<%  if session[:published] != nil %>
+  日付数　＝　<%=session[:published].length %> <p>
+<% else %>
+  日付数はありません<p>
+<% end %>
+  
+<%  if session[:contents] != nil %>
+  コンテンツ数　＝　<%=session[:contents].length %> <p>
+<% else %>
+  コンテンツ数はありません<p>
+<% end %>
+  
+<table class="sample_01">
+
+<div class="amimsition"> 
+  
+<% data.each_with_index do |e,index| %> 
+  <tr><td>
+      <a href="./honbun?idx=<%=index%>" class="animsition_link"><%= e.text.split("T")[0] %></a>
+  </td></tr> 
+<% end %>
+
+</div> 
+  
+</table>
+
+<p>
+<div class="sample_01"><a href="/">戻る</a></div>
